@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.multimodule.cache.redis.RedisAppConfig
+org.springframework.boot.actuate.autoconfigure.ManagementContextConfiguration=com.multimodule.cache.CacheManagementEndpointConfig

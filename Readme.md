@@ -13,13 +13,13 @@ Basic set, get,delete operations are supported by all the caching systems,
   Most of the customer facing applications could use this annotation .
  Also architecture is scalable to add cache dependent operations if we want to use them .
 
-##Sample Aerospike properties 
+## Sample Aerospike properties 
 
 {module-name}.aerospike.cluster.nodes=localhost:3000
 
 {module-name}.aerospike.namespace=test
 
-##Sample Redis properties
+## Sample Redis properties
 
 For redis , sentinel and cluster support both have been provided in library.
 
@@ -41,16 +41,16 @@ Other properties such as
 
 can also be specified but are optional .
 
-##Sample JVM properties
+## Sample JVM properties
 
 For jvm cache , wrapper has been written over guava lrumap library.
 Lru cache size needs to be defined by the client
 
 {module-name}.jvm.map.size=2000
 
-##Sample Code examples
+## Sample Code examples
 
-##Basic Architecture
+## Basic Architecture
 
 There can be multiple operations related to a cache system ,
  in case of redis , apis for list and set would be different as compared to list and set in aerospike 
@@ -59,9 +59,9 @@ There can be multiple operations related to a cache system ,
   AppAwareCommonCacheOperations. Most of the cases would come into this category and usage
    so this interface is highly recommended until some specific operations need to be performed.
 
-##Example code
+## Example codes
 
-##Aerospike 
+## Aerospike 
 
 public class AppAwareCacheOperationsTest {
 
@@ -107,7 +107,7 @@ public class AppAwareCacheOperationsTest {
 
 
 
-##Redis
+## Redis
 
 public class RedisAppAwareCacheOperationsTest {
 
@@ -143,7 +143,7 @@ public class RedisAppAwareCacheOperationsTest {
 }
 
 
-##JVM
+## JVM
 
 public class JvmAppAwareCacheOperations {
 
@@ -177,7 +177,7 @@ public class JvmAppAwareCacheOperations {
 }
 
 
-##Injecting Operations class 
+## Injecting Operations class 
 
 There is yet another way to inject client operations class :- 
 
@@ -194,7 +194,7 @@ public class SampleTest {
 
 cachetype can be aerospike,jvm or redis
 
-##Annotation(MultiModuleCachable) 
+## Annotation(MultiModuleCachable) 
 
 MultiModuleCachable named annotation has been made with its structure .There usage is given in comments.
 
@@ -220,7 +220,7 @@ public @interface MultiModuleCachable {
 
 
 
-##Sample code 
+## Sample code 
 
 public class TestService {
 
@@ -274,7 +274,7 @@ public class TestService {
 This annotation works around the function , checks if data is present in the cache specified , 
 if not executes the function otherwise returns the data from cache itself (read through cache)
 
-##Bucketing support(cache names)
+## Bucketing support(cache names)
 
 Bucketing support for cache names has also been added .
 There comes a need when application wants to bucketize certain sets of keys which are having same properties 
@@ -297,11 +297,11 @@ If  “test“ is specified in MultiModuleCachable annotation as cacheName , the
             <version>1.0.1-rc1</version>
   </dependency>
 
-##Add "com.multimodule" in scan packages  for Applicationconfig for spring boot
+## Add "com.multimodule" in scan packages  for Applicationconfig for spring boot
 
 Please refer to test cases for further integration issues.For test redis 
 and aerospike are assumed to be installed in locahost
 
-##ServiceModuleNameProvider
+## ServiceModuleNameProvider
 Each module must have one class implementing this interface.This will be used by library to get corresponding 
 module name of a particular module 

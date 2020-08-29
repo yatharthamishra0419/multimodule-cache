@@ -301,3 +301,7 @@ If  “test“ is specified in MultiModuleCachable annotation as cacheName , the
 
 Please refer to test cases for further integration issues.For test redis 
 and aerospike are assumed to be installed in locahost
+
+##ServiceModuleNameProvider
+Each module must have one class implementing this interface.This will be used by library to get corresponding 
+module name of a particular module 
